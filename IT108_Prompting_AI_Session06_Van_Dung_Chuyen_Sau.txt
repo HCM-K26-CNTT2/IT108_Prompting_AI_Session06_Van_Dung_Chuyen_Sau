@@ -1,0 +1,94 @@
+﻿[Vận dụng chuyên sâu] Thiết kế giải pháp Prompting ứng dụng thực tế cho Ứng dụng AI trong Học tập & Nghiên cứu 
+Bước 1: Thiết kế giải pháp (I/O)
+Xác định rõ Input của bài toán gồm những gì, và cấu trúc Output mong muốn.
+* Input (Dữ liệu đầu vào):
+* Đề bài giao ra
+* Bài làm của học viên
+* Tiêu chí chấm điểm(Rubric)
+
+
+* Output (Cấu trúc kết quả mong muốn):
+* Bảng chấm điểm Rubric: Điểm số từng tiêu chí + Tổng điểm + Nhận xét chi tiết.
+* Gợi ý sửa lỗi: Chỉ ra lỗi sai cụ thể và cách khắc phục.
+* Giải thích chuẩn theo kỹ thuật Feynman: giải thíchi lại kiến thức đúng một cách đơn giản nhất để học viên dễ tiếp thu và cho một ví dụ thực tế.
+
+
+Bước 2: Viết prompt và chạy thử
+Viết prompt hoàn chỉnh theo định dạng chuyên nghiệp và copy kết quả phản hồi của AI.
+Viết prompt hoàn chỉnh theo định dạng chuyên nghiệp
+Bạn hãy đóng vai trò là một giám khảo khó tính đang chấm bài làm của sinh viên
+Bạn hãy đánh giá bài làm của học viên dựa trên Rubric, chỉ ra lỗi sai và giải thích lại kiến thức theo phương pháp Feynman.
+
+
+
+
+Dữ liệu đầu vào:
+* Đề bài: Giải thích khái niệm Mảng (Array) trong ngôn ngữ lập trình C/C++. 
+* Bài làm của sinh viên: Mảng là một biến đặc biệt dùng để lưu nhiều giá trị cùng một lúc thay vì phải khai báo nhiều biến lẻ tẻ. Ví dụ muốn lưu điểm của 50 bạn trong lớp thì dùng mảng cho nhanh. Tuy nhiên mảng có thể chứa lẫn lộn cả số nguyên và chữ cái bên trong 
+* Tiêu chí chấm điểm (Rubric): dựa vào tính logic, độ chính xác, lấy ví dụ (Tính theo thang điểm 10)
+
+
+
+
+
+
+
+
+Dữ liệu đầu ra:
+Bảng tiêu chí chấm điểm (làm dưới dạng bảng Markdown)
+|Tiêu chí | Điểm tối đa | Điểm đạt được | Nhận xét chi tiết |
+ |:---:|:---: |:---:| :---:| 
+| Logic | ... | ... | ... | 
+| Độ chính xác | ... | ... | ... | 
+|Tổng điểm|... | ... |...| 
+ Phân tích lỗi sai và gợi ý sửa lại:
+* Chỗ làm tốt: “…” 
+* Lỗi sai cần khắc phục:”..” (Chỉ rõ câu hoặc ý nào sai và hướng dẫn cách sửa lại cho đúng). 
+
+
+ Giải thích theo kỹ thuật Feynman
+* Giải thích lại toàn bộ khái niệm của đề bài bằng ngôn ngữ đời thường, ngắn gọn, không dùng thuật ngữ phức tạp và kèm theo 1 ví dụ thực tế gần gũi nhất. 
+
+
+
+
+Ràng buộc:
+Trước khi chấm bài, bạn hãy kiểm tra dữ những gì mình bảo:
+1. Nếu đề bài hoặc Bài làm bị trống, chỉ chứa ký tự vô nghĩa (ví dụ: "asgrwgdf", "...", "123") thì phải trả về thông báo Lỗi và không được tự bịa ra nội dung để chấm.
+2. Nếu bài làm bị lạc đề hoàn toàn so với đề bài thì bạn phải chấm 0 điểm toàn bộ và ghi rõ lý do: "Bài làm không làm đúng trọng tâm câu hỏi", sau đó thì bạn phải thực hiện giải thích Feynman để sinh viên hiểu lại kiến thức. 
+3. Không được có lời chào hỏi hay giải thích dài dòng.
+
+
+copy kết quả phản hồi của AI.
+Bảng tiêu chí chấm điểm
+Tiêu chí
+	Điểm tối đa
+	Điểm đạt được
+	Nhận xét chi tiết
+	Logic & Diễn đạt
+	3.0
+	2.5
+	Lập luận mở đầu mạch lạc, đi từ khái niệm đến mục đích sử dụng hợp lý. Tuy nhiên, câu cuối cùng mâu thuẫn với bản chất kỹ thuật của chủ đề.
+	Độ chính xác
+	5.0
+	1.5
+	Nắm được công dụng cơ bản của mảng, nhưng sai nghiêm trọng kiến thức cốt lõi trong C/C++ về tính đồng nhất kiểu dữ liệu và thiếu ý về cách lưu trữ bộ nhớ (liên tiếp) cũng như chỉ số (index).
+	Lấy ví dụ
+	2.0
+	1.5
+	Ví dụ thực tế, đúng trọng tâm (lưu điểm của 50 sinh viên), nhưng chưa chỉ rõ kiểu dữ liệu cụ thể của điểm số (ví dụ: kiểu float).
+	Tổng điểm
+	10.0
+	5.5
+	Bài làm chỉ đạt mức trung bình. Cần chấn chỉnh ngay lỗ hổng kiến thức về kiểu dữ liệu của mảng trong C/C++.
+	Phân tích lỗi sai và gợi ý sửa lại
+* Chỗ làm tốt: “Mảng là một biến đặc biệt dùng để lưu nhiều giá trị cùng một lúc thay vì phải khai báo nhiều biến lẻ tẻ. Ví dụ muốn lưu điểm của 50 bạn trong lớp thì dùng mảng cho nhanh.” — Xác định đúng vai trò tiết kiệm thao tác khai báo và chọn ví dụ ứng dụng sát thực tế.
+* Lỗi sai cần khắc phục:
+   * Câu sai: “Tuy nhiên mảng có thể chứa lẫn lộn cả số nguyên và chữ cái bên trong”
+   * Phân tích lỗi: Đây là lỗi sai nghiêm trọng về bản chất ngôn ngữ C/C++. Trong C/C++, mảng là tập hợp các phần tử bắt buộc phải có cùng một kiểu dữ liệu (tính đồng nhất) và nằm liên tiếp nhau trong bộ nhớ. Bạn không thể nhét chung số nguyên (int) và ký tự (char) vào cùng một mảng thông thường. (Lưu ý: Nếu gán ký tự vào mảng số nguyên, C/C++ sẽ tự ép kiểu ký tự đó sang mã ASCII dạng số nguyên chứ không lưu chữ cái).
+   * Hướng dẫn sửa lại: “Tuy nhiên, tất cả các phần tử bên trong mảng bắt buộc phải có cùng một kiểu dữ liệu (ví dụ: đã là mảng số nguyên thì chỉ chứa toàn số nguyên) và được lưu trữ liền kề nhau trong bộ nhớ.”
+Giải thích theo Kỹ Thuật Feynman
+Hãy tưởng tượng Mảng (Array) giống như một dãy tủ giữ đồ (locker) ở siêu thị.
+* Thay vì bạn phải đặt 50 chiếc hộp nằm rải rác khắp nhà (khai báo 50 biến lẻ tẻ), bạn dùng một dãy tủ 50 ngăn xếp liền sát nhau và đặt chung một cái tên là Tu_Do (tên mảng).
+* Dãy tủ này có quy định rất khắt khe: Đã là tủ đựng giày thì tất cả 50 ngăn chỉ được để giày, không được ngăn để giày, ngăn để mũ bảo hiểm (tất cả phần tử phải cùng kiểu dữ liệu).
+* Để lấy đồ cho nhanh, mỗi ngăn tủ được dán một con số thứ tự từ 0 đến 49 (chỉ số index trong C/C++ luôn đếm từ 0). Muốn lấy đồ ở ngăn đầu tiên, bạn chỉ cần gọi đúng địa chỉ Tu_Do[0] là xong.
